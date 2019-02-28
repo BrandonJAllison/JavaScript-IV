@@ -24,6 +24,22 @@ class Instructor extends Person{
     grade(student, subject){
        return `${student.name} receives a perfect score on ${subject}`;
     }
+
+    checkGrad(student){
+        
+        let randomNumber = Math.floor(Math.random() * 10) + 1; 
+        student.grades = student.grades + randomNumber; 
+
+        if(student.grades >= 70){
+            return `${this.name} says ${student.name} has achieved a passing grade of ${student.grades} and is now a graduate of Lambda School`;
+         }
+
+         else{
+             return `${student.name} needs more practice before graduating.`;
+         }
+            
+    
+    }
 };
 
 class Student extends Person {
@@ -32,6 +48,7 @@ class Student extends Person {
         this.previousBackground = studentAttributes.previousBackground;
         this.className = studentAttributes.className;
         this.favSubjects = studentAttributes.favSubjects;
+        this.grades = studentAttributes.grades;
     }
     listsSubjects(){
       return  `My name is ${this.name} and these are my favorite subjects ${this.favSubjects}`;
@@ -40,8 +57,11 @@ class Student extends Person {
     return `studen.name has submitted a PR for ${subject}`;
 }
     sprintChallenge(subject){
+
        return `${this.name} has begun sprint challenge on ${subject}`;
+    
     }
+
 };
 
 class ProjectManager extends Instructor{
@@ -95,7 +115,8 @@ const brandon = new Student({
     gender:'M',
     previousBackground: 'Media Manager',
     className: 'Web18',
-    favSubjects: ['Html', 'CSS', 'JavaScript']
+    favSubjects: ['Html', 'CSS', 'JavaScript'],
+    grades: 80
    
 });
 const josh = new Student({
@@ -105,7 +126,8 @@ const josh = new Student({
     gender:'M',
     previousBackground: 'Mechanic',
     className: 'Web17', 
-    favSubjects: ['React', 'CS', 'JavaScript']
+    favSubjects: ['React', 'CS', 'JavaScript'],
+    grades: 63
     
 });
 const lindsay = new Student({
@@ -115,7 +137,8 @@ const lindsay = new Student({
     gender:'F',
     previousBackground: 'Cashier',
     className: 'WebPT4',
-    favSubjects: ['Python', 'JavaScript', 'Java']
+    favSubjects: ['Python', 'JavaScript', 'Java'],
+    grades: 90
     
 });
 
@@ -153,7 +176,8 @@ const ryan = new ProjectManager({
     gradClassName: 'CS2',
     favInstructor: 'Selma'
 });
-
+console.log('*************lambda-classes***************');
+console.log(josh);
 console.log(ryan.favInstructor);
 console.log(dan.demo('C++'));
 console.log(donald.standup('web18'));
@@ -161,4 +185,7 @@ console.log(brandon.listsSubjects());
 console.log(josh.sprintChallenge('JavaScript'));
 console.log(tina.debugCode(josh ,'JavaScript'));
 console.log(dan.grade(lindsay, 'HTML'));
-console.log(josh);
+console.log(ryan.checkGrad(lindsay));
+console.log(dan.checkGrad(josh));
+console.log(ryan.demo('HTML'));
+console.log(dan);
