@@ -27,13 +27,12 @@ class Instructor extends Person{
 
     checkGrad(student){
         
-        let randomNumber = Math.floor(Math.random() * 10) + 1; 
+        let randomNumber = Math.floor(Math.random() * 20) - 10; 
         student.grades = student.grades + randomNumber; 
 
         if(student.grades >= 70){
-            return `${this.name} says ${student.name} has achieved a passing grade of ${student.grades} and is now a graduate of Lambda School`;
+            return `${this.name} says ${student.name} has achieved a passing grade of ${student.grades} and is now a graduate of Lambda School!!`;
          }
-
          else{
              return `${student.name} needs more practice before graduating.`;
          }
@@ -51,6 +50,7 @@ class Student extends Person {
         this.grades = studentAttributes.grades;
     }
     listsSubjects(){
+      
       return  `My name is ${this.name} and these are my favorite subjects ${this.favSubjects}`;
     }
     PRAssignment(subject){
@@ -109,13 +109,13 @@ const dan = new Instructor({
 
 //Students
 const brandon = new Student({
-    name:'Brandon',
+    name:'Brandon Allison',
     age: 34,
     location:'Maine',
     gender:'M',
-    previousBackground: 'Media Manager',
+    previousBackground: 'Director of Media',
     className: 'Web18',
-    favSubjects: ['Html', 'CSS', 'JavaScript'],
+    favSubjects: ['Html', 'CSS', 'JavaScript', 'AI' ],
     grades: 80
    
 });
