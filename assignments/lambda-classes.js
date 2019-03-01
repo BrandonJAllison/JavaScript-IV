@@ -36,8 +36,6 @@ class Instructor extends Person{
          else{
              return `${student.name} needs more practice before graduating.`;
          }
-            
-    
     }
 };
 
@@ -51,7 +49,7 @@ class Student extends Person {
     }
     listsSubjects(){
       
-      return  `My name is ${this.name} and these are my favorite subjects ${this.favSubjects}`;
+      return  `My name is ${this.name} and these are my favorite subjects:\n${this.favSubjects.join("\n")}`;
     }
     PRAssignment(subject){
     return `studen.name has submitted a PR for ${subject}`;
@@ -176,6 +174,8 @@ const ryan = new ProjectManager({
     gradClassName: 'CS2',
     favInstructor: 'Selma'
 });
+
+
 console.log('*************lambda-classes***************');
 console.log(josh);
 console.log(ryan.favInstructor);
